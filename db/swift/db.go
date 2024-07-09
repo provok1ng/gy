@@ -1,4 +1,4 @@
-package swifty
+package swift
 
 import (
 	"context"
@@ -12,42 +12,42 @@ import (
 )
 
 const (
-	protocol         = "swifty.protocol"
-	protocolDefault  = "swift"
+	protocol         = "swift.protocol"
+	protocolDefault  = "swiftpaxos"
 
-	server        = "swifty.server"
-	serverDefault = "10.10.5.8"
+	server        = "swift.server"
+	serverDefault = "172.17.0.5"
 
-	master        = "swifty.master"
-	masterDefault = "10.10.5.8"
+	master        = "swift.master"
+	masterDefault = "172.17.0.4"
 
-	fast        = "swifty.fast"
+	fast        = "swift.fast"
 	fastDefault = false
 
-	leaderless        = "swifty.leaderless"
+	leaderless        = "swift.leaderless"
 	leaderlessDefault = false
 
-	args        = "swifty.args"
+	args        = "swift.args"
 	argsDefault = "none"
 )
 
 type contextKey string
 
-const stateKey = contextKey("swift")
+const stateKey = contextKey("swiftpaxos")
 
-type swiftyCreator struct{}
+type swiftCreator struct{}
 
-type swiftyDB struct {
+type swiftDB struct {
 	p       *properties.Properties
 	clients []swiftyycsb.SwiftClient
 }
 
 func init() {
-	ycsb.RegisterDBCreator("swifty", swiftyCreator{})
+	ycsb.RegisterDBCreator("swift", swiftCreator{})
 }
 
-func (c swiftyCreator) Create(p *properties.Properties) (ycsb.DB, error) {
-	return &swiftyDB{
+func (c swiftCreator) Create(p *properties.Properties) (ycsb.DB, error) {
+	return &swiftDB{
 		p: p,
 		clients: nil,
 	}, nil
@@ -70,7 +70,7 @@ func (c swiftyCreator) Create(p *properties.Properties) (ycsb.DB, error) {
 	// }, nil
 }
 
-func (db *swiftyDB) InitThread(ctx context.Context, _, _ int) context.Context {
+func (db *swiftDB) InitThread(ctx context.Context, _, _ int) context.Context {
 	t := db.p.GetString(protocol, protocolDefault)
 	s := db.p.GetString(server, serverDefault)
 	f := db.p.GetBool(fast, fastDefault)
@@ -86,17 +86,17 @@ func (db *swiftyDB) InitThread(ctx context.Context, _, _ int) context.Context {
 	return context.WithValue(ctx, stateKey, sc)
 }
 
-func (db *swiftyDB) CleanupThread(_ context.Context) {
+func (db *swiftDB) CleanupThread(_ context.Context) {
 }
 
-func (db *swiftyDB) Close() error {
+func (db *swiftDB) Close() error {
 	for _, c := range db.clients {
 		c.Disconnect()
 	}
 	return nil
 }
 
-func (db *swiftyDB) Read(ctx context.Context, table string, key string, _ []string) (map[string][]byte, error) {
+func (db *swiftDB) Read(ctx context.Context, table string, key string, _ []string) (map[string][]byte, error) {
 	client := ctx.Value(stateKey).(swiftyycsb.SwiftClient)
 
 	ks := sha256.Sum256([]byte(table+":"+key))
@@ -109,7 +109,7 @@ func (db *swiftyDB) Read(ctx context.Context, table string, key string, _ []stri
 	return nil, nil
 }
 
-func (db *swiftyDB) Scan(ctx context.Context, table string, startKey string, count int, _ []string) ([]map[string][]byte, error) {
+func (db *swiftDB) Scan(ctx context.Context, table string, startKey string, count int, _ []string) ([]map[string][]byte, error) {
 	client := ctx.Value(stateKey).(swiftyycsb.SwiftClient)
 
 	ks := sha256.Sum256([]byte(table+":"+startKey))
@@ -122,7 +122,7 @@ func (db *swiftyDB) Scan(ctx context.Context, table string, startKey string, cou
 	return nil, nil
 }
 
-func (db *swiftyDB) Update(ctx context.Context, table string, key string, values map[string][]byte) error {
+func (db *swiftDB) Update(ctx context.Context, table string, key string, values map[string][]byte) error {
 	client := ctx.Value(stateKey).(swiftyycsb.SwiftClient)
 
 	ks := sha256.Sum256([]byte(table+":"+key))
@@ -138,10 +138,10 @@ func (db *swiftyDB) Update(ctx context.Context, table string, key string, values
 	return nil
 }
 
-func (db *swiftyDB) Insert(ctx context.Context, table string, key string, values map[string][]byte) error {
+func (db *swiftDB) Insert(ctx context.Context, table string, key string, values map[string][]byte) error {
 	return db.Update(ctx, table, key, values)
 }
 
-func (db *swiftyDB) Delete(context.Context, string, string) error {
+func (db *swiftDB) Delete(context.Context, string, string) error {
 	return nil
 }

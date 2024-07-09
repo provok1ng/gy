@@ -76,8 +76,8 @@ import (
 	_ "github.com/pingcap/go-ycsb/db/etcd"
 	// Register dynamodb
 	_ "github.com/pingcap/go-ycsb/db/dynamodb"
-	// Register swifty
-	_ "github.com/pingcap/go-ycsb/db/swifty"
+	// Register swift
+	_ "github.com/pingcap/go-ycsb/db/swift"
 )
 
 var (
