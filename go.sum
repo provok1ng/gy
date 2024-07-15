@@ -494,6 +494,8 @@ github.com/provok1ng/sp v0.0.0-20240702170028-7f1f9343fb5f h1:LkECr4ol9oVf+nVW+F
 github.com/provok1ng/sp v0.0.0-20240702170028-7f1f9343fb5f/go.mod h1:YiyAhgOVc/vsjhQjISQvtQ6QLfyYt3/LT4PRAYpH7m0=
 github.com/provok1ng/sp v0.0.0-20240702173059-c93d8286577a h1:el0YXJjcM6TatfGpXP9FQa/n1NUK0HoC+oE3CHZb6eQ=
 github.com/provok1ng/sp v0.0.0-20240702173059-c93d8286577a/go.mod h1:YiyAhgOVc/vsjhQjISQvtQ6QLfyYt3/LT4PRAYpH7m0=
+github.com/provok1ng/sp v0.0.0-20240715120858-a9b455e21c3e h1:uaQ0Da3jktXZdGKLVE/607IT5Uqh3fER0aJv4EIKGmE=
+github.com/provok1ng/sp v0.0.0-20240715120858-a9b455e21c3e/go.mod h1:YiyAhgOVc/vsjhQjISQvtQ6QLfyYt3/LT4PRAYpH7m0=
 github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 h1:OdAsTTz6OkFY5QxjkYwrChwuRruF69c169dPK26NUlk=
 github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0/go.mod h1:qqbHyh8v60DhA7CoWK5oRCqLrMHRGoxYCSS9EjAz6Eo=
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=

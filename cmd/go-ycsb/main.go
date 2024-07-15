@@ -77,7 +77,7 @@ import (
 	// Register dynamodb
 	_ "github.com/pingcap/go-ycsb/db/dynamodb"
 	// Register swift
-	_ "github.com/pingcap/go-ycsb/db/swift"
+	_ "github.com/pingcap/go-ycsb/db/swiftpaxos"
 )
 
 var (

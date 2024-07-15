@@ -1,6 +1,7 @@
-package swift
+package swiftpaxos
 
 import (
+	"fmt"
 	"context"
 	"crypto/sha256"
 	"encoding/binary"
@@ -8,26 +9,26 @@ import (
 	"github.com/magiconair/properties"
 	"github.com/pingcap/go-ycsb/pkg/ycsb"
 
-	swiftyycsb "github.com/provok1ng/sp/ycsb"
+	swiftycsb "github.com/provok1ng/sp/ycsb"
 )
 
 const (
-	protocol         = "swift.protocol"
+	protocol         = "swiftpaxos.protocol"
 	protocolDefault  = "swiftpaxos"
 
-	server        = "swift.server"
+	server        = "swiftpaxos.server"
 	serverDefault = "172.17.0.5"
 
-	master        = "swift.master"
+	master        = "swiftpaxos.master"
 	masterDefault = "172.17.0.4"
 
-	fast        = "swift.fast"
+	fast        = "swiftpaxos.fast"
 	fastDefault = false
 
-	leaderless        = "swift.leaderless"
+	leaderless        = "swiftpaxos.leaderless"
 	leaderlessDefault = false
 
-	args        = "swift.args"
+	args        = "swiftpaxos.args"
 	argsDefault = "none"
 )
 
@@ -39,51 +40,41 @@ type swiftCreator struct{}
 
 type swiftDB struct {
 	p       *properties.Properties
-	clients []swiftyycsb.SwiftClient
+	clients []swiftycsb.SwiftClient
 }
 
 func init() {
-	ycsb.RegisterDBCreator("swift", swiftCreator{})
+	ycsb.RegisterDBCreator("swiftpaxos", swiftCreator{})
 }
 
 func (c swiftCreator) Create(p *properties.Properties) (ycsb.DB, error) {
-	return &swiftDB{
-		p: p,
-		clients: nil,
-	}, nil
-
-	// t := p.GetString(protocol, protocolDefault)
-	// s := p.GetString(server, serverDefault)
-	// f := p.GetBool(fast, fastDefault)
-	// l := p.GetBool(leaderless, leaderlessDefault)
-	// a := p.GetString(args, argsDefault)
-
-	// sc := swiftyycsb.NewswiftyClient(t, s, f, l, a)
-	// if sc == nil {
-	// 	return nil, nil
-	// }
-	// //err := sc.Connect()
-
-	// return &swiftyDB{
-	// 	p: p,
-	// 	client: sc,
-	// }, nil
+    // 取消注释并修复以下代码
+    t := p.GetString(protocol, protocolDefault)
+    s := p.GetString(server, serverDefault)
+    f := p.GetBool(fast, fastDefault)
+    l := p.GetBool(leaderless, leaderlessDefault)
+    a := p.GetString(args, argsDefault)
+    m := p.GetString(master, masterDefault)
+    // 确保 NewswiftClient 能够正确创建并返回一个 swiftClient 实例
+    sc := swiftycsb.NewswiftClient(t, s, m, 7087, f, l, a)
+    if sc == nil {
+    return nil, fmt.Errorf("failed to create swift client with parameters: protocol=%s, server=%s, master=%s, fast=%v, leaderless=%v, args=%s", t, s, m, f, l, a)
+    }
+    if sc == nil {
+        return nil, fmt.Errorf("failed to create swift client")
+    }
+    // 确保 client 被正确赋值
+    return &swiftDB{
+        p:   p,
+        clients: []swiftycsb.SwiftClient{sc}, // 注意：这里假设 NewswiftClient 返回 *swiftycsb.swiftClient 类型
+    }, nil
 }
 
 func (db *swiftDB) InitThread(ctx context.Context, _, _ int) context.Context {
-	t := db.p.GetString(protocol, protocolDefault)
-	s := db.p.GetString(server, serverDefault)
-	f := db.p.GetBool(fast, fastDefault)
-	l := db.p.GetBool(leaderless, leaderlessDefault)
-	a := db.p.GetString(args, argsDefault)
-	m := db.p.GetString(master, masterDefault)
-
-	sc := swiftyycsb.NewswiftClient(t, s, m, 7087, f, l, a)
-	if sc == nil {
-		return ctx
-	}
-	db.clients = append(db.clients, sc)
-	return context.WithValue(ctx, stateKey, sc)
+    client := db.clients[0]
+    // 以下代码使用 client 来初始化 context
+    // ...
+    return context.WithValue(ctx, stateKey, client)
 }
 
 func (db *swiftDB) CleanupThread(_ context.Context) {
@@ -97,7 +88,7 @@ func (db *swiftDB) Close() error {
 }
 
 func (db *swiftDB) Read(ctx context.Context, table string, key string, _ []string) (map[string][]byte, error) {
-	client := ctx.Value(stateKey).(swiftyycsb.SwiftClient)
+	client := ctx.Value(stateKey).(swiftycsb.SwiftClient)
 
 	ks := sha256.Sum256([]byte(table+":"+key))
 	kks := make([]byte, 32)
@@ -110,7 +101,7 @@ func (db *swiftDB) Read(ctx context.Context, table string, key string, _ []strin
 }
 
 func (db *swiftDB) Scan(ctx context.Context, table string, startKey string, count int, _ []string) ([]map[string][]byte, error) {
-	client := ctx.Value(stateKey).(swiftyycsb.SwiftClient)
+	client := ctx.Value(stateKey).(swiftycsb.SwiftClient)
 
 	ks := sha256.Sum256([]byte(table+":"+startKey))
 	kks := make([]byte, 32)
@@ -123,7 +114,7 @@ func (db *swiftDB) Scan(ctx context.Context, table string, startKey string, coun
 }
 
 func (db *swiftDB) Update(ctx context.Context, table string, key string, values map[string][]byte) error {
-	client := ctx.Value(stateKey).(swiftyycsb.SwiftClient)
+	client := ctx.Value(stateKey).(swiftycsb.SwiftClient)
 
 	ks := sha256.Sum256([]byte(table+":"+key))
 	kks := make([]byte, 32)

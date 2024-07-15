@@ -1,12 +1,212 @@
-2024/07/08 08:57:30 dialing master...
-2024/07/08 08:57:30 getting list of replicas...
-2024/07/08 08:57:30 searching for the closest replica...
-2024/07/08 08:57:30 pinging all replicas...
-2024/07/08 08:57:32 0 -> 0.06
-2024/07/08 08:57:32 replicas [172.17.0.5:7070]
-2024/07/08 08:57:32 closest (alive) 0
-2024/07/08 08:57:32 getting leader from master...
-2024/07/08 08:57:32 leader id 0
-2024/07/08 08:57:32 connecting to 172.17.0.5:7070
-
-2024/07/08 08:37:07 sending command 0 to 0
+2024/07/15 13:56:02 dialing master...
+2024/07/15 13:56:02 getting list of replicas...
+2024/07/15 13:56:02 searching for the closest replica...
+2024/07/15 13:56:02 pinging all replicas...
+2024/07/15 13:56:04 0 -> 0.074
+2024/07/15 13:56:04 replicas [172.17.0.5:7070]
+2024/07/15 13:56:04 closest (alive) 0
+2024/07/15 13:56:04 getting leader from master...
+2024/07/15 13:56:04 leader id 0
+2024/07/15 13:56:04 connecting to 172.17.0.5:7070
+2024/07/15 13:56:04 SQ: 1
+2024/07/15 13:56:04 FQ: 1
+2024/07/15 13:56:04 sending command 0 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 1 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 2 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 3 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 4 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 5 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 6 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 7 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 8 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 9 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 10 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 11 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 12 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 13 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 14 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 15 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 16 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 17 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 18 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 19 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 20 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 21 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 22 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 23 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 24 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 25 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 26 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 27 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 28 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 29 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 30 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 31 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 32 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 33 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 34 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 35 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 36 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 37 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 38 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 39 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 40 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 41 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 42 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 43 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 44 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 45 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 46 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 47 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 48 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 49 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 50 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 51 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 52 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 53 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 54 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 55 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 56 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 57 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 58 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 59 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 60 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 61 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 62 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 63 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 64 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 65 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 66 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 67 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 68 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 69 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 70 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 71 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 72 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 73 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 74 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 75 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 76 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 77 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 78 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 79 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 80 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 81 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 82 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 83 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 84 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 85 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 86 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 87 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 88 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 89 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 90 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 91 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 92 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 93 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 94 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 95 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 96 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 97 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 98 to 0
+2024/07/15 13:56:04 Slow Paths: 0
+2024/07/15 13:56:04 sending command 99 to 0
+2024/07/15 13:56:04 Slow Paths: 0
